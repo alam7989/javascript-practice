@@ -7,7 +7,17 @@
  * @example [3,2,3] -> 3
 */
 function problem(numbers) {
-    return null;
+    const maj = Math.floor(numbers.length / 2)
+    let dict = {};
+    for (n in numbers) {
+        dict[numbers[n]] = 0
+    }
+    for (n in numbers) {
+        dict[numbers[n]]++
+        if (parseInt(dict[numbers[n]]) >= maj) {
+            return numbers[n]
+        }
+    }
 }
 
 const tests = [
